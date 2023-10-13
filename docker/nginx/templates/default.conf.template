@@ -3,13 +3,12 @@ server {
     server_name learn.test;
 
     root /var/www/learn/public;
-    index index.html;
+    index index.php index.html;
 
     access_log /dev/stdout;
     error_log /dev/stderr;
 
     # entrypoint files
-    index index.php index.html;
 
     # php fpm nginx config
     location ~ \.php$ {
