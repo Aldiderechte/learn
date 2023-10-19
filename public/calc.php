@@ -28,8 +28,7 @@ if (!hasOneOperator($result)) {
     $operator = hasOneOperator($result);
     $stringArray = exploder($result, $operator);
     $calc = new Calculator((float)$stringArray[0], (float) $stringArray[1], $operator);
-    $calc->calculate();
-    $result = $calc->getResult();
+    $result = $calc->calculate();
     require 'main.php';
 
 

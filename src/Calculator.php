@@ -25,16 +25,8 @@ class Calculator extends Math implements CalcInterface
         $this->division = new Division();
     }
 
-    public function getResult() : float {
-        return round($this->result, 2);
-    }
 
-    public function calculate () : void {
-        $this->result = match ($this->operator) {
-            self::MATH_PLUS => $this->plus->calculate($this->num1, $this->num2),
-            self::MATH_MINUS => $this->minus->calculate($this->num1, $this->num2),
-            self::MATH_MULTI => $this->multi->calculate($this->num1, $this->num2),
-            self::MATH_DIVIDE => $this->division->calculate($this->num1, $this->num2),
-        };
+    public function calculate () : float {
+        return $this->num1 . $this->operator . $this->num2;
     }
 }
