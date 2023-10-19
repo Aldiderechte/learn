@@ -1,4 +1,4 @@
 <?php
-header("location: main.html" );
+header("location: main.php" );
 exit;
 ?>

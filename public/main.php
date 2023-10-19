@@ -10,10 +10,14 @@
 <!--Taschenrechner-->
 <form action="calc.php" method="post">
 
+<div style="color: red;">
+    <?= $error ?? '' ?>
+</div>
+
 
     <table id="calcu">
         <tr>
-            <td colspan="3"><input type="text" id="result"></td>
+            <td colspan="3"><input type="text" id="result" name="input" value="<?= $result ?? 0 ?>"></td>
             <td><input type="button" value="c" onclick="clr()" /> </td>
         </tr>
         <tr>
@@ -54,13 +58,12 @@
 
         <!-- Lösen der Rechnung-->
 
-            <td><input type="button" value="=" onclick="solve()"> </td>
+            <td><input type="submit" value="=" > </td>
 
             <td><input type="button" value="+" onclick="dis('+')"
                        onkeydown="myFunction(event)"> </td>
         </tr>
     </table>
-    <input type="submit" />
 </form>
 
 
@@ -96,6 +99,9 @@
     function clr() {
         document.getElementById("result").value = ""
     }
+
+    var jsVal = "Test!";
+
 </script>
 </body>
 
@@ -106,7 +112,7 @@
             margin-right: auto;
         }
 
-        input[type="button"] {
+        input[type="button"],input[type="submit"] {
             width: 100%;
             padding: 20px 40px;
             background-color: #007BFF;
@@ -124,6 +130,16 @@
             border: none;
             border-radius: 5px;
             border: 2px solid black;
+        }
+
+        body {
+
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
     </style>
 
