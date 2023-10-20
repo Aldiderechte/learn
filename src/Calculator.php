@@ -9,24 +9,22 @@ class Calculator extends Math implements CalcInterface
     private const MATH_MULTI = '*';
     private const MATH_DIVIDE = '/';
 
-    private OperationInterface $plus;
-    private OperationInterface $minus;
-    private OperationInterface $multi;
-    private OperationInterface $division;
 
     public function __construct(
         private float $num1,
         private float $num2,
         private string $operator
     ) {
-        $this->plus = new Plus();
-        $this->minus = new Minus();
-        $this->multi = new Multi();
-        $this->division = new Division();
     }
 
 
-    public function calculate () : float {
-        return $this->num1 . $this->operator . $this->num2;
+    public function calculate () : float
+    {
+        return match ($this->operator) {
+            self::MATH_PLUS => $this->num1 + $this->num2,
+            self::MATH_MINUS => $this->num1 - $this->num2,
+            self::MATH_MULTI => $this->num1 * $this->num2,
+            self::MATH_DIVIDE => $this->num1 / $this->num2,
+        };
     }
 }
