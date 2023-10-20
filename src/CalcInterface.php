@@ -1,8 +1,9 @@
 <?php
 
+namespace Simovative\learn;
 
 
 interface CalcInterface
 {
-    public function calculate () : float;
+    public function getResult () : float;
 }

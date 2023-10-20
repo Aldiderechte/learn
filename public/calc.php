@@ -1,8 +1,14 @@
 <?php
-spl_autoload_register(function ($class_name)
+
+use Simovative\learn\Calculator;
+
+spl_autoload_register(function ($className)
 {
-    include '../src/' . $class_name . '.php';
+    $className = str_replace('\\', '/', $className);
+    $className = str_replace('Simovative/learn/', '', $className);
+    include '../src/' . $className . '.php';
 });
+
 
 function hasOneOperator (string $input): string {
     $operatorArray = ['+', '-', '*', '/'];
@@ -14,24 +20,37 @@ function hasOneOperator (string $input): string {
     return false;
 }
 
-function exploder (string $input, string $operator) {
-    return explode($operator, $input);
+function hasBracket (string $input) : bool
+{
+    $brackets = ['(', ')', '[', ']', '{', '}'];
+    foreach ($brackets as $bracket) {
+        if (str_contains($input, $bracket)) {
+            return True;
+        }
+    }
+    return False;
+}
+
+function exploder (string $input) {
+    $pattern = '/([+\-\/\*])/';
+    return preg_split($pattern, $input, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
 };
 
 $result = $_REQUEST['input'] ?? '';
 
-//$error = 'Fehler falsche Zahl';
 if (!hasOneOperator($result)) {
-    $error = 'Passt nicht';
-    exit();
-} else {
-    $operator = hasOneOperator($result);
-    $stringArray = exploder($result, $operator);
-    $calc = new Calculator((float)$stringArray[0], (float) $stringArray[1], $operator);
-    $result = $calc->calculate();
+    $error = 'Fehler bei Eingabe';
     require 'main.php';
 
-
+} /*elseif (!hasBracket($result)) {
+    $error = 'Fehler bei Eingabe';
+    require 'main.php';
+}*/
+else {
+    $stringArray = exploder($result);
+    $calc = new Calculator($stringArray);
+    $result = $calc->getResult();
+    require 'main.php';
 }
 
 

@@ -1,8 +1,8 @@
 <?php
 
+namespace Simovative\learn;
 
-
-class Calculator extends Math implements CalcInterface
+class Calculator implements CalcInterface
 {
     private const MATH_PLUS = '+';
     private const MATH_MINUS = '-';
@@ -11,20 +11,38 @@ class Calculator extends Math implements CalcInterface
 
 
     public function __construct(
-        private float $num1,
-        private float $num2,
-        private string $operator
+        private $numberArray,
     ) {
     }
 
+    public function getResult () : float {
+        return $this->calculate();
+    }
 
-    public function calculate () : float
+    private function calculate () : float
     {
-        return match ($this->operator) {
-            self::MATH_PLUS => $this->num1 + $this->num2,
-            self::MATH_MINUS => $this->num1 - $this->num2,
-            self::MATH_MULTI => $this->num1 * $this->num2,
-            self::MATH_DIVIDE => $this->num1 / $this->num2,
-        };
+        $operator = '';
+        $result = null;
+        foreach ($this->numberArray as $element) {
+            if (is_numeric($element)) {
+                $value = (float) $element;
+                if ($result === null) {
+                    $result = $value;
+                } else {
+                    if ($operator === self::MATH_PLUS) {
+                        $result += $value;
+                    } elseif ($operator === self::MATH_MINUS) {
+                        $result -= $value;
+                    } elseif ($operator === self::MATH_MULTI) {
+                        $result *= $value;
+                    } elseif ($operator === self::MATH_DIVIDE) {
+                        $result /= $value;
+                    }
+                }
+            } elseif (in_array($element, ['+', '-', '*', '/'])) {
+                $operator = $element;
+            }
+        }
+        return $result;
     }
 }

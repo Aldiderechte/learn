@@ -17,7 +17,7 @@
 
     <table id="calcu">
         <tr>
-            <td colspan="3"><input type="text" id="result" name="input" value="<?= $result ?? 0 ?>"></td>
+            <td colspan="3"><input type="text" id="result" name="input" value="<?= $result ?? '' ?>"></td>
             <td><input type="button" value="c" onclick="clr()" /> </td>
         </tr>
         <tr>
