@@ -25,10 +25,10 @@ function hasBracket (string $input) : bool
     $brackets = ['(', ')', '[', ']', '{', '}'];
     foreach ($brackets as $bracket) {
         if (str_contains($input, $bracket)) {
-            return True;
+            return true;
         }
     }
-    return False;
+    return false;
 }
 
 function exploder (string $input) {
@@ -42,20 +42,15 @@ if (!hasOneOperator($result)) {
     $error = 'Fehler bei Eingabe';
     require 'main.php';
 
-} /*elseif (!hasBracket($result)) {
+} elseif (hasBracket($result)) {
     $error = 'Fehler bei Eingabe';
     require 'main.php';
-}*/
+}
 else {
     $stringArray = exploder($result);
     $calc = new Calculator($stringArray);
     $result = $calc->getResult();
     require 'main.php';
 }
-
-
-
-
-
 
 //Weitere Funktion die Operator aus Input gibt. Contains verwenden. Funktion explode verwenden. Zahlen casten & Ergebnis in Result.
