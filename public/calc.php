@@ -1,16 +1,22 @@
 <?php
 
-use Simovative\learn\Calculator;
+namespace Monolog;
 
-spl_autoload_register(function ($className)
+require '../vendor/autoload.php';
+
+#$log = new Package\Calc\('name');
+#$log->pushHandler(new Package\Calc('app.log', Package\Calc::WARNING));
+#$log->warning('Foo');
+
+/*spl_autoload_register(function ($className)
 {
     $className = str_replace('\\', '/', $className);
     $className = str_replace('Simovative/learn/', '', $className);
     include '../src/' . $className . '.php';
-});
+});*/
 
 
-function hasOneOperator (string $input): string {
+function hasOneOperator (string $input) : string {
     $operatorArray = ['+', '-', '*', '/'];
     foreach ($operatorArray as $operator) {
         if (str_contains($input, $operator)) {
