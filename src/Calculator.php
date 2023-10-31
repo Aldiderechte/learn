@@ -13,6 +13,7 @@ class Calculator implements CalcInterface
     private OperationInterface $minus;
     private OperationInterface $multi;
     private OperationInterface $division;
+    private float $result;
 
     public function __construct(
         private float $num1,

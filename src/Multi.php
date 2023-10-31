@@ -1,6 +1,6 @@
 <?php
 
-namespace Simovative\Learn;
+namespace Monolog;
 
 class Multi implements OperationInterface
 {

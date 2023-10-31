@@ -8,10 +8,6 @@ require '../vendor/autoload.php';
 #$log->pushHandler(new Package\Calc('app.log', Package\Calc::WARNING));
 #$log->warning('Foo');
 
-/*spl_autoload_register(function ($className)
-{
-    include '../src/' . $class_name . '.php';
-});
 
 function hasOneOperator (string $input): string {
     $operatorArray = ['+', '-', '*', '/'];
