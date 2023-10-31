@@ -1,6 +1,7 @@
 <?php
 
-namespace Simovative\Learn;
+namespace Monolog;
+
 
 interface CalcInterface
 {

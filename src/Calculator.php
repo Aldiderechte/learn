@@ -1,8 +1,8 @@
 <?php
 
-namespace Simovative\Learn;
+namespace Monolog;
 
-class Calculator extends Math implements CalcInterface
+class Calculator implements CalcInterface
 {
     private const MATH_PLUS = '+';
     private const MATH_MINUS = '-';

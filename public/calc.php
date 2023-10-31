@@ -1,14 +1,17 @@
 <?php
 
-use Simovative\Learn\Calculator;
+namespace Monolog;
 
-spl_autoload_register(function ($className)
+require '../vendor/autoload.php';
+
+#$log = new Package\Calc\('name');
+#$log->pushHandler(new Package\Calc('app.log', Package\Calc::WARNING));
+#$log->warning('Foo');
+
+/*spl_autoload_register(function ($className)
 {
-    $className = str_replace('\\', '/', $className);
-    $className = str_replace('Simovative/Learn/', '', $className);
-    include '../src/' . $className . '.php';
+    include '../src/' . $class_name . '.php';
 });
-
 
 function hasOneOperator (string $input): string {
     $operatorArray = ['+', '-', '*', '/'];
@@ -20,20 +23,15 @@ function hasOneOperator (string $input): string {
     return false;
 }
 
-
 function exploder (string $input, string $operator) {
     return explode($operator, $input);
 };
 
 $result = $_REQUEST['input'] ?? '';
 
-function check () {
-
-}
-
+//$error = 'Fehler falsche Zahl';
 if (!hasOneOperator($result)) {
     $error = 'Passt nicht';
-    require 'main.php';
     exit();
 } else {
     $operator = hasOneOperator($result);
@@ -44,7 +42,11 @@ if (!hasOneOperator($result)) {
     require 'main.php';
 
 
-
 }
 
-//composer einbinden, composer.json, docker exec, composer phar, ..., requiere installieren, PSR4 Autoload
+
+
+
+
+
+//Weitere Funktion die Operator aus Input gibt. Contains verwenden. Funktion explode verwenden. Zahlen casten & Ergebnis in Result.
