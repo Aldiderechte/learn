@@ -1,5 +1,6 @@
 <?php
 
+namespace Simovative\Learn;
 
 class Plus implements OperationInterface
 {

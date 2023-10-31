@@ -1,6 +1,6 @@
 <?php
 
-
+namespace Simovative\Learn;
 
 class Minus implements OperationInterface
 {

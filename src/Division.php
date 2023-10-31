@@ -1,6 +1,6 @@
 <?php
 
-
+namespace Simovative\Learn;
 
 class Division implements OperationInterface
 {

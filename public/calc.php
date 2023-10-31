@@ -1,8 +1,14 @@
 <?php
-spl_autoload_register(function ($class_name)
+
+use Simovative\Learn\Calculator;
+
+spl_autoload_register(function ($className)
 {
-    include '../src/' . $class_name . '.php';
+    $className = str_replace('\\', '/', $className);
+    $className = str_replace('Simovative/Learn/', '', $className);
+    include '../src/' . $className . '.php';
 });
+
 
 function hasOneOperator (string $input): string {
     $operatorArray = ['+', '-', '*', '/'];
@@ -14,15 +20,20 @@ function hasOneOperator (string $input): string {
     return false;
 }
 
+
 function exploder (string $input, string $operator) {
     return explode($operator, $input);
 };
 
 $result = $_REQUEST['input'] ?? '';
 
-//$error = 'Fehler falsche Zahl';
+function check () {
+
+}
+
 if (!hasOneOperator($result)) {
     $error = 'Passt nicht';
+    require 'main.php';
     exit();
 } else {
     $operator = hasOneOperator($result);
@@ -33,11 +44,7 @@ if (!hasOneOperator($result)) {
     require 'main.php';
 
 
+
 }
 
-
-
-
-
-
-//Weitere Funktion die Operator aus Input gibt. Contains verwenden. Funktion explode verwenden. Zahlen casten & Ergebnis in Result.
+//composer einbinden, composer.json, docker exec, composer phar, ..., requiere installieren, PSR4 Autoload
