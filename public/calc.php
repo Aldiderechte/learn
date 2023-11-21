@@ -8,14 +8,6 @@ require '../vendor/autoload.php';
 #$log->pushHandler(new Package\Calc('app.log', Package\Calc::WARNING));
 #$log->warning('Foo');
 
-/*spl_autoload_register(function ($className)
-{
-    $className = str_replace('\\', '/', $className);
-    $className = str_replace('Simovative/learn/', '', $className);
-    include '../src/' . $className . '.php';
-});*/
-
-
 function hasOneOperator (string $input) : string {
     $operatorArray = ['+', '-', '*', '/'];
     foreach ($operatorArray as $operator) {
