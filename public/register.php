@@ -19,4 +19,3 @@ $stmt->bindParam(':password', $password);
 $stmt->execute();
 
 $userid = $pdo->lastInsertId();
-var_dump($userid);
