@@ -1,5 +1,4 @@
 <?php
-require('index.php');
 
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -19,11 +18,10 @@ foreach ($result as $check){
         if (password_verify($password, $check[1])) {
             header('location: main.php');
             break;
-        }echo 'Passwort falsch';
+        }
 
-        break;
-    }echo 'User existiert nicht';
-    break;
+
+    }
 }
 
 

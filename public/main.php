@@ -13,9 +13,6 @@
 <!--Taschenrechner-->
 <form action="calc.php" method="post">
 
-<div style="color: red;">
-    <?= $error ?? '' ?>
-</div>
 
 
     <table id="calcu">
