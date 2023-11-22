@@ -9,7 +9,7 @@ $pdo = new PDO('mysql:host=mysql_db;dbname=kaboom', 'root', 'root');
 
 $sql = '
         INSERT INTO 
-            user (username, password) 
+            User (username, password) 
         VALUES 
             (:username, :password)';
 

@@ -2,12 +2,11 @@
 <html lang="de">
 
 <head>
-
+    <link rel="stylesheet" href="styles/mainphpstyle.css">
 </head>
 
 <body>
 
-<!--Taschenrechner-->
 <form action="calc.php" method="post">
 
 <div style="color: red;">
@@ -104,43 +103,4 @@
 
 </script>
 </body>
-
-<style>
-        table {
-            border: 1px solid black;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        input[type="button"],input[type="submit"] {
-            width: 100%;
-            padding: 20px 40px;
-            background-color: #007BFF;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-        }
-
-        input[type="text"] {
-            padding: 20px 30px;
-            font-size: 24px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            border: 2px solid black;
-        }
-
-        body {
-
-            background-color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-    </style>
-
 </html>

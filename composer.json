@@ -1,16 +1,18 @@
 {
-    "name": "package/calc",
+    "name": "simovative/kaboom",
     "type": "project",
-    "require": {
-        "php": "8.1.2"
-    },
     "autoload": {
         "psr-4": { "Monolog\\": ["src/", "public/"] }
     },
     "authors": [
         {
-            "name": "Maximilian Neidel",
-            "email": "maximilian.neidel@simovative.com"
+            "name": "Maxi"
         }
-    ]
+    ],
+    "require": {
+        "twig/twig": "v3.8.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.10"
+    }
 }

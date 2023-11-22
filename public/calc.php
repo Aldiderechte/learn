@@ -29,7 +29,7 @@ function hasBracket (string $input) : bool
     return false;
 }
 
-function exploder (string $input) {
+function exploder (string $input) : string {
     $pattern = '/([+\-\/\*])/';
     return preg_split($pattern, $input, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
 };
