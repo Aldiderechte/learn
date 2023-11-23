@@ -8,7 +8,7 @@ function navigateToPage(page) {
     } else if (page === 'page3') {
         window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley");
     } else if (page === 'page2') {
-        window.location.replace("");
+        window.location.replace("http://learn.test/tictactoe.php");
     }
 
 
