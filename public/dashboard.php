@@ -6,6 +6,4 @@ $twig = new \Twig\Environment($loader, [
     'cache' => false,
 ]);
 
-echo $twig->render('main.twig', ['name' => 'Florian']);
-
-
+echo $twig->render('dashboard.twig', ['name' => 'Florian']);

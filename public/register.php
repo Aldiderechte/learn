@@ -1,4 +1,6 @@
 <?php
+require '../vendor/autoload.php';
+
 
 $username = $_POST['new_username'];
 
@@ -20,4 +22,10 @@ $stmt->bindParam(':password', $password);
 $stmt->execute();
 
 $userId = $pdo->lastInsertId();
-var_dump($userId);
+
+$loader = new \Twig\Loader\FilesystemLoader('../src/User/Templates');
+$twig = new \Twig\Environment($loader, [
+    'cache' => false,
+]);
+
+echo $twig->render('register.twig', ['name' => 'Florian']);
