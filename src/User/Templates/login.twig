@@ -3,81 +3,12 @@
 <head>
     <title>Login und Registrierung</title>
 
-    <style>
+<link rel="stylesheet", href="styles/login.css">
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .form-container {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            padding: 30px;
-            width: 400px;
-            text-align: center;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: none;
-            border-bottom: 1px solid #ddd;
-            background-color: transparent;
-        }
-
-        input[type="submit"] {
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-
-        .divider {
-            margin-top: 20px;
-            border-top: 1px solid #ddd;
-        }
-
-        .switch-form {
-            margin-top: 20px;
-            color: #007BFF;
-            cursor: pointer;
-        }
-        .error {
-            color: red;
-        }
-
-    </style>
 </head>
 <body>
 <div class="form-container">
     <h1>Login</h1>
-    Hallo {{ name }}
     <form action="login.php" method="post">
         <p class="error"><?= $error ?? '' ?>
             <label for="username">Benutzername:</label>
@@ -113,14 +44,7 @@
     <p class="switch-form">Bereits ein Konto vorhanden? <a href="#" onclick="toggleForm()">Anmelden</a></p>
 </div>
 
-<script>
-    function toggleForm() {
-        const loginForm = document.querySelector('.form-container:nth-child(1)');
-        const registerForm = document.querySelector('.form-container:nth-child(2)');
+<script src="scripts/login.js"></script>
 
-        loginForm.style.display = loginForm.style.display === 'none' ? 'block' : 'none';
-        registerForm.style.display = registerForm.style.display === 'none' ? 'block' : 'none';
-    }
-</script>
 </body>
 </html>

@@ -5,7 +5,7 @@ services:
     container_name: learn_nginx
     volumes:
       - ./..:/var/www/learn
-      - ./nginx/Templates:/etc/nginx/Templates
+      - ./nginx/templates:/etc/nginx/templates
     ports:
       - "80:80"
     networks:

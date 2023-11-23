@@ -29,7 +29,7 @@ function hasBracket (string $input) : bool
     return false;
 }
 
-function exploder (string $input) : string {
+function exploder (string $input) {
     $pattern = '/([+\-\/\*])/';
     return preg_split($pattern, $input, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
 };
@@ -38,17 +38,22 @@ $result = $_REQUEST['input'] ?? '';
 
 if (!hasOneOperator($result)) {
     $error = 'Fehler bei Eingabe';
-    require 'main.php';
 
 } elseif (hasBracket($result)) {
     $error = 'Fehler bei Eingabe';
-    require 'main.php';
 }
 else {
     $stringArray = exploder($result);
     $calc = new Calculator($stringArray);
     $result = $calc->getResult();
-    require 'main.php';
 }
+
+$loader = new \Twig\Loader\FilesystemLoader('../src/User/Templates');
+$twig = new \Twig\Environment($loader, [
+    'cache' => false,
+]);
+
+
+echo $twig->render('main.twig', ['result' => $result, 'error' => $error ?? '']);
 
 //Weitere Funktion die Operator aus Input gibt. Contains verwenden. Funktion explode verwenden. Zahlen casten & Ergebnis in Result.
