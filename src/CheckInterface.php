@@ -1,9 +1,9 @@
 <?php
 
-namespace Simovative\Learn;
+namespace Simovative\Kaboom;
 
 interface CheckInterface
 {
-    public function check ($result) : void;
+    public function hasOneOperator (string $input): string;
 
 }

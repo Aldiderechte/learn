@@ -1,6 +1,6 @@
 <?php
 
-namespace Simovative\Learn;
+namespace Simovative\Kaboom;
 
 class Plus implements OperationInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Simovative\Learn\Calculator;
+namespace Simovative\Kaboom;
 
 class Operator {
     function hasOneOperator (string $input): string {
