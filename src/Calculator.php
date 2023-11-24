@@ -29,14 +29,14 @@ class Calculator implements CalcInterface
                 if ($result === null) {
                     $result = $value;
                 } else {
-                    if ($operator === self::MATH_PLUS) {
-                        $result += $value;
-                    } elseif ($operator === self::MATH_MINUS) {
-                        $result -= $value;
-                    } elseif ($operator === self::MATH_MULTI) {
+                    if ($operator === self::MATH_MULTI) {
                         $result *= $value;
                     } elseif ($operator === self::MATH_DIVIDE) {
                         $result /= $value;
+                    } elseif ($operator === self::MATH_PLUS) {
+                        $result += $value;
+                    } elseif ($operator === self::MATH_MINUS) {
+                        $result -= $value;
                     }
                 }
             } elseif (in_array($element, ['+', '-', '*', '/'])) {
