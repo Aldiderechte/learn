@@ -45,11 +45,18 @@ services:
     container_name: php
     volumes:
       - ./..:/var/www/learn
+
+    environment:
+      XDEBUG_CONFIG: "client_host=host.docker.internal"
+
+    working_dir: /var/www/learn
+
     build:
       context: ./..
       dockerfile: docker/Dockerfile
     networks:
       - backend_net
+
 
 networks:
   backend_net:
@@ -58,3 +65,4 @@ networks:
 volumes:
   db-volume:
     name: db-volume
+
